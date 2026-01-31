@@ -1,0 +1,239 @@
+/* Global */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Soria", serif;
+  color: #ebe6e9;
+  scroll-behavior: auto; /* we use custom scroll instead */
+}
+.section-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+ .section-content h1 {
+    font-size: 6rem;
+    text-align: center;
+    font-weight: bold;
+  }
+  .section-content p{
+    font-size: 2rem;
+    text-align: center;;
+  }
+
+/* Use dynamic vh for iPad Safari */
+.section {
+  height: min(100vh, calc(var(--vh) * 100));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  max-height: none;
+
+  /* Fade + slide animation */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 5s ease, transform 5s ease;
+
+}
+
+/* Unlocked section */
+.section.open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Locked section */
+.section.locked {
+  max-height: 0;
+}
+
+/* Arrow button centered bottom */
+.arrow-btn {
+  background: transparent;
+  color: #ebe6e9;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 20px;
+  border-radius: 50%;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+/* Layout for Section Two */
+.section-two {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  flex-direction: row;
+  gap: 4rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+
+/* Left side: heart animation */
+#ui {
+  width: 450px;
+  height: 450px;
+  position: relative;
+  flex-shrink: 0; /* prevents shrinking on small screens */
+}
+
+/* Right side: text block */
+.section-two-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 550px;
+  margin-left:64px;
+  flex-grow: 1;
+}
+
+.section-two-text h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.section-two-text p {
+  margin-top: 1rem;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  line-height: 1.4;
+}
+
+.heart-container {
+  width: 450px;
+  height: 450px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+/* Each generated item */
+#ui .love {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -225px 0 0 -225px;
+  --i: 1;
+}
+
+/* The text */
+#ui .love_word {
+  color: #ebe6e9;
+  font-size: 1.4rem;
+  white-space: nowrap;
+  transform: translateY(-100%) rotateZ(-30deg);
+}
+
+/* Horizontal movement */
+#ui .love_horizontal {
+  animation: horizontal 10000ms infinite alternate ease-in-out;
+  animation-delay: calc(var(--i) * -300ms);
+}
+
+/* Vertical movement (heart illusion) */
+#ui .love_vertical {
+  animation: vertical 20000ms infinite linear;
+  animation-delay: calc(var(--i) * -300ms);
+}
+
+/* Horizontal oscillation */
+@keyframes horizontal {
+  from { transform: translateX(0px); }
+  to   { transform: translateX(450px); }
+}
+
+/* Vertical heart curve oscillation */
+@keyframes vertical {
+  0%   { transform: translateY(180px); }
+  10%  { transform: translateY(45px); }
+  15%  { transform: translateY(4.5px); }
+  18%  { transform: translateY(0px); }
+  20%  { transform: translateY(4.5px); }
+  22%  { transform: translateY(34.6px); }
+  24%  { transform: translateY(64.2px); }
+  25%  { transform: translateY(112.5px); }
+  26%  { transform: translateY(64.2px); }
+  28%  { transform: translateY(34.6px); }
+  30%  { transform: translateY(4.5px); }
+  32%  { transform: translateY(0px); }
+  35%  { transform: translateY(4.5px); }
+  40%  { transform: translateY(45px); }
+  50%  { transform: translateY(180px); }
+  71%  { transform: translateY(428.5px); }
+  72.5%{ transform: translateY(441.1px); }
+  75%  { transform: translateY(450px); }
+  77.5%{ transform: translateY(441.1px); }
+  79%  { transform: translateY(428.5px); }
+  100% { transform: translateY(180px); }
+}
+
+
+.arrow-btn:hover {
+  background: #b97bc0b0;
+}
+.bottom-shadow {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 160px; /* important: enough room for the fade */
+  pointer-events: none;
+
+  background: linear-gradient( 
+    to top, 
+    rgba(0, 0, 0, 0.40) 0%, /* darkest at the very bottom */
+    rgba(0, 0, 0, 0.28) 20%, /* softening */ 
+    rgba(0, 0, 0, 0.18) 40%, /* smoother */ 
+    rgba(0, 0, 0, 0.10) 60%, /* barely visible */ 
+    rgba(0, 0, 0, 0.04) 80%, /* whisper fade */ 
+    rgba(0, 0, 0, 0) 100% /* fully transparent */ 
+  );
+  z-index: 10;
+}
+
+
+
+/* iPad Landscape Tweaks */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1366px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  .section {
+    justify-content: center; /* prevents arrow being pushed down */
+  }
+
+  .section-content h1 {
+    font-size: 6rem;
+    text-align: center;
+    font-weight: bold;
+  }
+  .section-content p{
+    font-size: 2rem;
+    text-align: center;;
+  }
+  .arrow-btn {
+    bottom: 20px;
+  }
+}
+
