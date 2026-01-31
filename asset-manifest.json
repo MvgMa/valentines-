@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/valentines-/static/css/main.7c73a66c.css",
+    "main.js": "/valentines-/static/js/main.74b792b7.js",
+    "static/js/453.745c3b27.chunk.js": "/valentines-/static/js/453.745c3b27.chunk.js",
+    "static/media/image4.jpg": "/valentines-/static/media/image4.a9f47198222c82582a10.jpg",
+    "static/media/image3.jpg": "/valentines-/static/media/image3.1cdac2fae654d82c65e6.jpg",
+    "static/media/image2.jpg": "/valentines-/static/media/image2.d09835ab0da9cbed2027.jpg",
+    "static/media/image1.jpg": "/valentines-/static/media/image1.1e9e0c4a79ebd9e02b3e.jpg",
+    "static/media/image5.jpg": "/valentines-/static/media/image5.759cac2539311dffb568.jpg",
+    "static/media/image6.jpg": "/valentines-/static/media/image6.7a36a69567a68c6e6792.jpg",
+    "index.html": "/valentines-/index.html",
+    "main.7c73a66c.css.map": "/valentines-/static/css/main.7c73a66c.css.map",
+    "main.74b792b7.js.map": "/valentines-/static/js/main.74b792b7.js.map",
+    "453.745c3b27.chunk.js.map": "/valentines-/static/js/453.745c3b27.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7c73a66c.css",
+    "static/js/main.74b792b7.js"
+  ]
+}
